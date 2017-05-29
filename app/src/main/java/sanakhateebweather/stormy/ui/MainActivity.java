@@ -1,6 +1,7 @@
 package sanakhateebweather.stormy.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -9,6 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -22,6 +24,7 @@ import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -252,5 +255,13 @@ public class MainActivity extends AppCompatActivity {
     private void alertUserAboutError() {
         AlertDialogFragment dialog = new AlertDialogFragment();
         dialog.show(getFragmentManager(), "error_dialog");
+    }
+
+
+    @OnClick (R2.id.dailyButton)
+    public void startDailyActivity(View view)
+    {
+        Intent intent = new Intent(this, DailyForecastActivity.class);
+        startActivity(intent);
     }
 }
