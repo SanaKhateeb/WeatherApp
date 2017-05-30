@@ -47,6 +47,7 @@ public class DayAdapter extends BaseAdapter {
             //brand new
             convertView = LayoutInflater.from(mContext).inflate(R.layout.daily_list_item, parent, false);
             holder = new ViewHolder();
+            holder.circleImageView = (ImageView) convertView.findViewById(R.id.circleImageView);
             holder.iconImageView = (ImageView) convertView.findViewById(R.id.iconImageView);
             holder.temperatureLabel = (TextView) convertView.findViewById(R.id.temperatureLabel);
             holder.dayLabel = (TextView) convertView.findViewById(R.id.dayNameLabel);
@@ -64,6 +65,7 @@ public class DayAdapter extends BaseAdapter {
         Drawable drawable = ContextCompat.getDrawable(mContext, day.getIconId());
         holder.iconImageView.setImageDrawable(drawable);
 
+        holder.circleImageView.setImageResource(R.drawable.bg_temperature);
         holder.temperatureLabel.setText(day.getTemperatureMax() + "");
         holder.dayLabel.setText(day.getDayOfTheWeek());
 
@@ -72,6 +74,7 @@ public class DayAdapter extends BaseAdapter {
     }
 
     private static class ViewHolder {
+        ImageView circleImageView;
         ImageView iconImageView;
         TextView temperatureLabel;
         TextView dayLabel;

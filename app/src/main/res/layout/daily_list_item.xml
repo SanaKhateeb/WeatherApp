@@ -22,13 +22,14 @@
         android:visibility="visible"
         app:srcCompat="@drawable/bg_temperature"/>
 
+
     <ImageView
         android:id="@+id/iconImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/circleImageView"
-        android:layout_toRightOf="@+id/circleImageView"
+        android:layout_toEndOf="@+id/temperatureLabel"
+        android:layout_toRightOf="@+id/temperatureLabel"
         android:paddingLeft="10dp"
         app:srcCompat="@drawable/clear_day"/>
 
@@ -52,10 +53,11 @@
         android:layout_alignLeft="@+id/circleImageView"
         android:layout_alignRight="@+id/circleImageView"
         android:layout_alignTop="@+id/circleImageView"
-        android:layout_centerInParent="true"
         android:gravity="center"
-        android:textColor="#f25019"
+        android:textColor="@color/colorPrimaryDark"
         android:visibility="visible"
         tools:text="100"/>
+
+
 
 </RelativeLayout>
